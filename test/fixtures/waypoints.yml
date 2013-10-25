@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  location: MyString
+  wayprint: MyText
+  lat: 1.5
+  lng: 1.5
+  trip_id: 1
+
+two:
+  name: MyString
+  location: MyString
+  wayprint: MyText
+  lat: 1.5
+  lng: 1.5
+  trip_id: 1

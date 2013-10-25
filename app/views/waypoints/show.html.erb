@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @waypoint.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @waypoint.location %>
+</p>
+
+<p>
+  <strong>Wayprint:</strong>
+  <%= @waypoint.wayprint %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @waypoint.lat %>
+</p>
+
+<p>
+  <strong>Lng:</strong>
+  <%= @waypoint.lng %>
+</p>
+
+<p>
+  <strong>Trip:</strong>
+  <%= @waypoint.trip_id %>
+</p>
+
+<%= link_to 'Edit', edit_waypoint_path(@waypoint) %> |
+<%= link_to 'Back', waypoints_path %>
