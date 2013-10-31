@@ -5,7 +5,9 @@ class WaypointsController < ApplicationController
   # GET /waypoints.json
   def index
     @waypoints = Waypoint.all
+    gon.waypoints = Waypoint.all
     @waypoint = Waypoint.new
+    @w = Waypoint.first
   end
 
   # GET /waypoints/1
@@ -29,7 +31,7 @@ class WaypointsController < ApplicationController
 
     respond_to do |format|
       if @waypoint.save
-        format.html { redirect_to @waypoint, notice: 'Waypoint was successfully created.' }
+        format.html { redirect_to waypoints_path, notice: 'Waypoint was successfully created.' }
         format.json { render action: 'show', status: :created, location: @waypoint }
       else
         format.html { render action: 'new' }
@@ -43,7 +45,7 @@ class WaypointsController < ApplicationController
   def update
     respond_to do |format|
       if @waypoint.update(waypoint_params)
-        format.html { redirect_to @waypoint, notice: 'Waypoint was successfully updated.' }
+        format.html { redirect_to waypoints_path, notice: 'Waypoint was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

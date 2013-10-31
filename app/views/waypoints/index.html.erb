@@ -1,52 +1,42 @@
-<h1>Listing waypoints</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-      <th>Wayprint</th>
-      <th>Lat</th>
-      <th>Lng</th>
-      <th>Trip</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @waypoints.each do |waypoint| %>
-      <tr>
-        <td><%= waypoint.name %></td>
-        <td><%= waypoint.location %></td>
-        <td><%= waypoint.wayprint %></td>
-        <td><%= waypoint.lat %></td>
-        <td><%= waypoint.lng %></td>
-        <td><%= waypoint.trip_id %></td>
-        <td><%= link_to 'Show', waypoint %></td>
-        <td><%= link_to 'Edit', edit_waypoint_path(waypoint) %></td>
-        <td><%= link_to 'Destroy', waypoint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Waypoint', new_waypoint_path %>
-<p id="coords">coords</p>
+<h3>Current Location coords</h3>
+<p id="coords"></p>
 
 <div id="map"></div>
 
-<div>
+<div id="wordpost">
   <%= form_for @waypoint do |f| %>
     <div class="field">
-      <%= f.label :name %><br>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, 
+                    :class => "topcoat-text-input",
+                    :placeholder => "Name",
+                    :size => 74 
+                    %>
     </div>
-    <%= f.text_field :lat, :id => 'latitude_field' %><br>
+ 
+    <div class="field">
+      <%= f.text_area :wayprint, 
+                    :class => "topcoat-textarea", 
+                    :rows => "4",
+                    :cols => "73",
+                    :placeholder => "Enter Text"
+                     %>
+    </div>
+
+    <%= f.hidden_field :lat, :id => 'latitude_field'%><br>
     <%= f.text_field :lng, :id => 'longitude_field' %><br>
-    <%= f.submit "Submit!" %>
+    <%= f.submit "Submit!", :class => "topcoat-button" %>
+
   <% end %>
+  <%= button_to_function "Cancel", '$("#wordpost").slideUp();', :class => "topcoat-button" %>
  </div>
+
+<div class="topcoat-list">
+  <h3 class="topcoat-list__header">Waypoints</h3>
+    <ul class="topcoat-list__container">
+      <% @waypoints.each do |waypoint| %>
+    <li class="topcoat-list__item">
+      <%= waypoint.wayprint %> | <%= link_to 'Edit', edit_waypoint_path(waypoint) %> | <%= link_to 'Destroy', waypoint, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+    <% end %>
+  </ul>
+</div>
