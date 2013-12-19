@@ -23,12 +23,21 @@
     </div>
 
     <%= f.hidden_field :lat, :id => 'latitude_field'%><br>
-    <%= f.text_field :lng, :id => 'longitude_field' %><br>
-    <%= f.submit "Submit!", :class => "topcoat-button" %>
+    <%= f.text_field :lng, :id => 'longitude_field' %> lng(to be hidden)<br>
+    <input type="file" class ="topcoat-button" /> Testing adding a pic<br/>
+    <%= f.submit "Submit!"%>
 
   <% end %>
   <%= button_to_function "Cancel", '$("#wordpost").slideUp();', :class => "topcoat-button" %>
  </div>
+
+
+  <div id="container">
+    <div class="item">item 1</div>
+    <div class="item w2">item 400</div>
+    <div class="item">intem 345</div>
+  </div>
+
 
 <div class="topcoat-list">
   <h3 class="topcoat-list__header">Waypoints</h3>

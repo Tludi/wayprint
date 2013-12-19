@@ -1,0 +1,43 @@
+<!-- Home Section -->
+      <!-- Modal For Gallery -->
+      <div class="modal fade" id="modal1" tabindex="-1" role="dialog">
+        <div class="wrapper">
+          <img data-dismiss="modal" class="img-responsive" src="sarahawaii.jpg" alt="">
+          <h2 class="modal-title"><a href="http://sintel.org">Sarah in Maui</a></h2>
+        </div><!-- /.content -->      
+      </div><!-- /.modal -->
+
+      <div class="modal fade" id="modal2" tabindex="-1" role="dialog">
+        <div class="wrapper">
+          <img data-dismiss="modal" class="img-responsive" src="img/sintel-snowscape.jpg" alt="">
+          <h2 class="modal-title"><a href="http://sintel.org">Sintel Snowscape</a></h2>
+        </div><!-- /.content -->      
+      </div><!-- /.modal -->
+
+      <div class="modal fade" id="modal3" tabindex="-1" role="dialog">
+        <div class="wrapper">
+          <img data-dismiss="modal" class="img-responsive" src="img/sintel-bamboo.jpg" alt="">
+          <h2 class="modal-title"><a href="http://sintel.org">Sintel Bamboo</a></h2>
+        </div><!-- /.content -->      
+      </div><!-- /.modal -->
+
+      
+    <div id="home" class="section">
+      <div class="container">
+        <div class="gallery portfolio row">
+          <ul>
+            
+            <% @waypoints.each do |waypoint| %>
+              <li class="col-md-4 col-sm-4 col-xs-12 mix icons mix_all" data-cat="icons" style="display: inline-block; opacity: 1;">
+                <a data-toggle="modal" href="#modal1" class="mix-cover gray">
+                  <img class="horizontal" src="/assets/sarahawaii.jpg" alt="placeholder">
+                  <span class="overlay"><span class="valign"></span><span class="title">Maui</span></span>
+                </a>                          
+              </li>
+            <% end %>
+    
+          </ul>
+        </div>        
+        
+      </div>
+    </div><!-- /.container -->

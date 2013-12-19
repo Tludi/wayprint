@@ -1,6 +1,7 @@
 $(document).ready(function(){  
   var map = L.map('map');
   
+  
   // Uses the MapQuest-OSM tiles
   L.tileLayer('http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.png', {
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Tiles Courtesy of <a href="http://www.mapquest.com">MapQuest</a>',
@@ -65,4 +66,6 @@ $(document).ready(function(){
 
   map.on('click', onMapClick);
 });
+
+
 
